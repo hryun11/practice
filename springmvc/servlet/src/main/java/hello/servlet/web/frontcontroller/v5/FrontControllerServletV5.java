@@ -1,6 +1,6 @@
 package hello.servlet.web.frontcontroller.v5;
 
-import hello.servlet.web.frontcontroller.ModelView;
+import hello.servlet.web.frontcontroller.ModelAndView;
 import hello.servlet.web.frontcontroller.MyView;
 import hello.servlet.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import hello.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
@@ -62,7 +62,7 @@ public class FrontControllerServletV5 extends HttpServlet {
         //2. HandlerAdapter 찾기
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
 
-        ModelView mv = adapter.handle(req, resp, handler);  // 핸들러 어댑터가 핸들러(컨트롤러) 호출
+        ModelAndView mv = adapter.handle(req, resp, handler);  // 핸들러 어댑터가 핸들러(컨트롤러) 호출
 
         String viewName = mv.getViewName();//논리이름 new-form
         MyView view = viewResolver(viewName);   // 논리 뷰 이름을 실제 물리 뷰 경로로 변경한다.
