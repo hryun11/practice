@@ -19,7 +19,6 @@ public class ArrayList {
         size++; // 배열의 사이즈 하나씩 증가
         return true;
     }
-
     public boolean add(int index, Object element) {
         for (int i = size - 1; i >= index; i--) {
             elementData[i + 1] = elementData[i];
